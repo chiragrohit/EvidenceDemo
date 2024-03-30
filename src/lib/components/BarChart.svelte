@@ -5,6 +5,12 @@
 	export let yAxisData = [820, 932, 901, 934, 1290, 1330, 1320];
 
 	const options = {
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+				type: 'shadow'
+			}
+		},
 		xAxis: {
 			data: xAxisData,
 			type: 'category'
