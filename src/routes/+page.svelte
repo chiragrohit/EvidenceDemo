@@ -1,2 +1,31 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { Chart } from 'chart.js/auto';
+	import { onMount } from 'svelte';
+
+	let chartData;
+	let chartValues = [20, 10, 5, 2, 20, 30, 45];
+	let chartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+	let ctx;
+	let chartCanvas;
+
+	onMount(async () => {
+		ctx = chartCanvas.getContext('2d');
+		var chart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: chartLabels,
+				datasets: [
+					{
+						label: 'Revenue',
+						backgroundColor: 'rgb(255, 99, 132)',
+						borderColor: 'rgb(255, 99, 132)',
+						data: chartValues
+					}
+				]
+			}
+		});
+	});
+</script>
+
+Chart
+<canvas bind:this={chartCanvas} id="myChart"></canvas>
