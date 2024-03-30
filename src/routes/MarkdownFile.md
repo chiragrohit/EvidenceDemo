@@ -2,6 +2,6 @@
     import BarChart from '$lib/components/Barchart.svelte'
 </script>
 
-# Bar Chart MD
+# Inside Markdown File
 
 <BarChart xAxisData={['a', 'b', 'c']} yAxisData={[10, 25, 13]}/>
